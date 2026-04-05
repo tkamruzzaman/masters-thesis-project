@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
+  m_Name: Choice_1_1
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
+  prompt: What do you think, listening to this?
+  options:
+  - label: Mona's right. Something about the way Dhona talks about the forest makes
+      my stomach turn.
+    lean: 0
+    conscienceValue: 1
+    flagToSet: 
+    responseSequence: {fileID: 0}
+    nextSequence: {fileID: 11400000, guid: 5f9dfaa56040e48c9a81f3f2ebea3873, type: 2}
+  - label: Dhona's been doing this longer than anyone. He probably knows what he's
+      doing.
+    lean: 2
+    conscienceValue: 0
+    flagToSet: 
+    responseSequence: {fileID: 0}
+    nextSequence: {fileID: 11400000, guid: 5f9dfaa56040e48c9a81f3f2ebea3873, type: 2}

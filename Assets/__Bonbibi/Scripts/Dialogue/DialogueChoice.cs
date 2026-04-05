@@ -20,7 +20,7 @@ namespace Bonbibi
         public string label;
 
         public LeanTag lean;
-        public int conscienceValue;         // 0 for [N] or [X], 1 for [C]
+        public int conscienceValue;
 
         [Tooltip("Optional. 'promisedMother' is the only flag in use.")]
         public string flagToSet;

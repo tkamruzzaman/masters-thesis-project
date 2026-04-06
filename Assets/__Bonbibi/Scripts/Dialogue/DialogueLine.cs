@@ -1,6 +1,4 @@
     using UnityEngine;
-    using Sirenix;
-    using Sirenix.Serialization;
 
     namespace Bonbibi
 {
@@ -8,16 +6,14 @@
     public class DialogueLine : ScriptableObject
     {
         [Header("Content")]
-        public bool isNarration;
         public CharacterNames speaker;
-        //[TextArea(5, 15)]
         [Multiline(10)]
         public string text;
     }
 
     public enum CharacterNames
     {
-        None = 0,
+        Narration = 0,
         Dhona,
         Mona,
         Dukhi,

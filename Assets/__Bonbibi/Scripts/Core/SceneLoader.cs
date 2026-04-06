@@ -31,7 +31,6 @@ namespace Bonbibi
         [SerializeField] private string[] sceneNames;
 
         [Header("Fade")] 
-        //[SerializeField] private CanvasGroup fadeCanvasGroup;
         [SerializeField] private float fadeDuration = 1f;
 
         private int _currentSceneIndex = 0;
@@ -134,14 +133,6 @@ namespace Bonbibi
                 position = spawnPoint.transform.position,
                 rotation = spawnPoint.transform.rotation,
             });
-           /*
-            if (!PlayerLock.Instance) return;
-
-            PlayerLock.Instance.TeleportTo(
-                spawnPoint.transform.position,
-                spawnPoint.transform.rotation
-            );
-            */
         }
 
         private IEnumerator Fade(float from, float to)

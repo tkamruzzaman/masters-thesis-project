@@ -49,10 +49,6 @@ namespace Bonbibi
         }
     }
 
-// ─────────────────────────────────────────
-// Enums
-// ─────────────────────────────────────────
-
     public enum MoralLean
     {
         HighConscience,

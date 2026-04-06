@@ -7,8 +7,6 @@ namespace Bonbibi
 {
     public class DialogueManager : MonoBehaviour
     {
-        //public static DialogueManager Instance { get; private set; }
-        
         public event EventHandler OnChoiceOrSequenceStarted; 
         public event EventHandler OnChoiceOrSequenceEnded; 
         public bool IsPlaying { get; private set; } = false;
@@ -17,26 +15,20 @@ namespace Bonbibi
         private int _currentLineIndex = 0;
         private bool _waitingForInput = false;
         private bool _waitingForChoice = false;
-        
-        private void Awake()
-        {
-            //Instance = this;
-        }
 
-        public void PlaySequence(DialogueSequence sequence)
+        public void PlaySequence(DialogueSequence dialogueSequence)
         {
-            if (!sequence || sequence.lines.Length == 0)
+            if (!dialogueSequence || dialogueSequence.lines.Length == 0)
             {
                 Debug.LogWarning("DialogueManager: PlaySequence called with null or empty sequence.");
                 return;
             }
 
-            _currentSequence = sequence;
+            _currentSequence = dialogueSequence;
             _currentLineIndex = 0;
             IsPlaying = true;
 
             OnChoiceOrSequenceStarted?.Invoke(this, EventArgs.Empty);
-            //PlayerLock.Instance?.Lock();
             ShowCurrentLine();
         }
 
@@ -48,12 +40,17 @@ namespace Bonbibi
                 return;
             }
 
-            DialogueLine line = _currentSequence.lines[_currentLineIndex];
+            DialogueLine dialogueLine = _currentSequence.lines[_currentLineIndex];
 
-            if (line.isNarration)
-                DialogueUI.Instance.ShowNarration(line.text);
-            else
-                DialogueUI.Instance.ShowDialogueLine(line.speaker.ToString(), line.text);
+            switch (dialogueLine.speaker)
+            {
+                case CharacterNames.Narration:
+                    DialogueUI.Instance.ShowNarration(dialogueLine.text);
+                    break;
+                default:
+                    DialogueUI.Instance.ShowDialogueLine(dialogueLine.speaker.ToString(), dialogueLine.text);
+                    break;
+            }
 
             _waitingForInput = true;
         }
@@ -64,19 +61,20 @@ namespace Bonbibi
             _waitingForInput = false;
             DialogueUI.Instance.HideAll();
             OnChoiceOrSequenceEnded?.Invoke(this, EventArgs.Empty);
-            //PlayerLock.Instance?.Unlock();
 
             // Cache before clearing so the event fires cleanly
             DialogueSequence completed = _currentSequence;
             _currentSequence = null;
             
             if (completed.loadNextSceneOnComplete)
+            {
                 SceneLoader.Instance.LoadNext();
+            }
         }
 
-        public void PlayChoice(DialogueChoice choice)
+        public void PlayChoice(DialogueChoice dialogueChoice)
         {
-            if (choice == null || choice.options.Length == 0)
+            if (dialogueChoice == null || dialogueChoice.options.Length == 0)
             {
                 Debug.LogWarning("DialogueManager: PlayChoice called with null or empty choice.");
                 return;
@@ -86,56 +84,65 @@ namespace Bonbibi
             _waitingForChoice = true;
 
             OnChoiceOrSequenceStarted?.Invoke(this, EventArgs.Empty);
-            //PlayerLock.Instance?.Lock();
 
-            DialogueUI.Instance.ShowChoices(choice.prompt, choice.options,
-                (int index) => { OnChoiceSelected(choice.options[index]); });
+            DialogueUI.Instance.ShowChoices(dialogueChoice.prompt, dialogueChoice.options,
+                (int index) =>
+                {
+                    OnChoiceSelected(dialogueChoice.options[index]);
+                });
         }
 
-        private void OnChoiceSelected(ChoiceOption option)
+        private void OnChoiceSelected(ChoiceOption choiceOption)
         {
             _waitingForChoice = false;
 
             // Write to GameState
-            if (option.conscienceValue != 0)
-                GameState.AddConscience(option.conscienceValue);
+            if (choiceOption.conscienceValue != 0)
+            {
+                GameState.AddConscience(choiceOption.conscienceValue);
+            }
 
-            if (!string.IsNullOrEmpty(option.flagToSet))
-                HandleFlag(option.flagToSet);
+            if (!string.IsNullOrEmpty(choiceOption.flagToSet))
+            {
+                HandleFlag(choiceOption.flagToSet);
+            }
 
             DialogueUI.Instance.HideAll();
 
             // Play response first if one exists, then continue to nextSequence
-            if (option.responseSequence != null)
+            if (choiceOption.responseSequence != null)
             {
-                StartCoroutine(PlaySequenceThenContinue(option.responseSequence, option.nextSequence));
+                StartCoroutine(PlaySequenceThenContinue(choiceOption.responseSequence, choiceOption.nextSequence));
             }
-            else if (option.nextSequence != null)
+            else if (choiceOption.nextSequence != null)
             {
-                PlaySequence(option.nextSequence);
+                PlaySequence(choiceOption.nextSequence);
             }
             else
             {
                 FinishChoice();
             }
         }
-        private IEnumerator PlaySequenceThenContinue(DialogueSequence response, DialogueSequence next)
+        private IEnumerator PlaySequenceThenContinue(DialogueSequence responseSequence, DialogueSequence nextSequence)
         {
-            PlaySequence(response);
+            PlaySequence(responseSequence);
 
             // Wait until the response sequence finishes
             yield return new WaitUntil(() => !IsPlaying);
 
-            if (next)
-                PlaySequence(next);
+            if (nextSequence)
+            {
+                PlaySequence(nextSequence);
+            }
             else
+            {
                 FinishChoice();
+            }
         }
         private void FinishChoice()
         {
             IsPlaying = false;
             OnChoiceOrSequenceEnded?.Invoke(this, EventArgs.Empty);
-            //PlayerLock.Instance?.Unlock();
         }
         
 
@@ -154,9 +161,11 @@ namespace Bonbibi
 
         private void Update()
         {
-            if (!_waitingForInput || _waitingForChoice) return;
+            if (!_waitingForInput || _waitingForChoice) { return; }
+
             if (!Keyboard.current.spaceKey.wasPressedThisFrame &&
-                !Mouse.current.leftButton.wasPressedThisFrame) return;
+                !Mouse.current.leftButton.wasPressedThisFrame) { return; }
+
             _waitingForInput = false;
             _currentLineIndex++;
             ShowCurrentLine();

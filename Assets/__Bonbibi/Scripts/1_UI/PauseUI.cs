@@ -1,0 +1,59 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+
+    public class PauseUI : MonoBehaviour
+    {
+        [Header("Buttons")]
+        [SerializeField] Button continueButton;
+        [SerializeField] Button optionsButton;
+        [SerializeField] Button backButton;
+
+        [Header("OptionUI")]
+        [SerializeField] GameObject optionsUIPrefab;
+        [SerializeField] OptionsUI optionsUI;
+        private void OnEnable()
+        {
+            //GlobalEvents.SendPauseGame(true);
+        }
+        void Awake()
+        {
+            continueButton.onClick.AddListener(ContinueButtonAction);
+            optionsButton.onClick.AddListener(OptionsButtonAction);
+            backButton.onClick.AddListener(BackButtonAction);
+
+            optionsUI = Instantiate(optionsUIPrefab, null).GetComponent<OptionsUI>();
+            optionsUI.gameObject.SetActive(false);
+        }
+
+        void ContinueButtonAction()
+        {
+            // Resume the game
+            GameServices.Instance.audioManager.PlayButtonClick();
+            //CursorManager.s_instance.ToggleCursor(false);
+            Close();
+        }
+
+        void OptionsButtonAction()
+        {
+            // Open options menu
+            GameServices.Instance.audioManager.PlayButtonClick();
+            optionsUI.gameObject.SetActive(true);
+        }
+
+        void BackButtonAction()
+        {
+            // Go back to the main menu
+            GameServices.Instance.audioManager.PlayButtonClick();
+            Time.timeScale = 1;
+            GameServices.Instance.navigationManager.LoadScene(Scenes.Menu);
+        }
+
+        public void Close()
+        {
+            Time.timeScale = 1;
+            //GlobalEvents.SendPauseGame(false);
+            gameObject.SetActive(false);
+        }
+    }
+

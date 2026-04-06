@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd3deeab11f4e618821cc118d28cf9a, type: 3}
+  m_Name: Seq_S6_End_HC
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueSequence
+  lines:
+  - {fileID: 11400000, guid: 5932502c97434417da2a9c5dda0ce6c8, type: 2}
+  - {fileID: 11400000, guid: 2a41111882e9b46ba9ac1a6973b1ddbc, type: 2}
+  loadNextSceneOnComplete: 0

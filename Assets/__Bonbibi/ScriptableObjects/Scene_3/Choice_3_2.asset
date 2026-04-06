@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
+  m_Name: Choice_3_2
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
+  prompt: 
+  options:
+  - label: Pick up the crate. Let it slip.
+    lean: 0
+    conscienceValue: 1
+    flagToSet: 
+    responseSequence: {fileID: 11400000, guid: 22e58b1db027740d6a72f62c1ed523ae, type: 2}
+    nextSequence: {fileID: 11400000, guid: e5bd5d1d06f3442d3b359186dd91ab3a, type: 2}
+  - label: Load the boat.
+    lean: 2
+    conscienceValue: 0
+    flagToSet: 
+    responseSequence: {fileID: 11400000, guid: 03837be6bdb3045b581d18a747128e7b, type: 2}
+    nextSequence: {fileID: 11400000, guid: e5bd5d1d06f3442d3b359186dd91ab3a, type: 2}

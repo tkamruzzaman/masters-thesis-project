@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd3deeab11f4e618821cc118d28cf9a, type: 3}
+  m_Name: Seq_S5_Convergence
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueSequence
+  lines:
+  - {fileID: 11400000, guid: baf270ea67e024933a750e9d0af85e1c, type: 2}
+  - {fileID: 11400000, guid: 2391f766f74b74114960f298fa2b07da, type: 2}
+  - {fileID: 11400000, guid: 783171501f5744a298d480bb00d029ae, type: 2}
+  - {fileID: 11400000, guid: 8f2677bce48ba4e21903a730cfa6d339, type: 2}
+  - {fileID: 11400000, guid: 8f67eb1140572442fa5e992c91223148, type: 2}
+  - {fileID: 11400000, guid: 075676ceb656c42cd93f5df2ccada3c1, type: 2}
+  - {fileID: 11400000, guid: ae2728e2db5fb4938988793b3a16f339, type: 2}
+  - {fileID: 11400000, guid: d6db3f21e50954ee6bf113e142d03ea6, type: 2}
+  loadNextSceneOnComplete: 1

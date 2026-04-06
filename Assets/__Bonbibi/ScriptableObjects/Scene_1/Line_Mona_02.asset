@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
+  m_Name: Line_Mona_02
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
+  speaker: 2
+  isNarration: 0
+  text: I come home. That's the point. The deep jungle belongs to Dokkhin Rai. His
+    territory, his rules. Bonbibi and Dokkhin Rai made that agreement long before
+    either of us was born, and it has kept this forest alive. The moment we stop
+    respecting it is the moment the whole thing starts to come apart.

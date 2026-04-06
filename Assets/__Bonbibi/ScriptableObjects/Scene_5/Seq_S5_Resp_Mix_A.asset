@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bd3deeab11f4e618821cc118d28cf9a, type: 3}
-  m_Name: New DialogueSequence
+  m_Name: Seq_S5_Resp_Mix_A
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueSequence
-  lines: []
+  lines:
+  - {fileID: 11400000, guid: f0e584ba92e914065accc4e58b07c44d, type: 2}
   loadNextSceneOnComplete: 0

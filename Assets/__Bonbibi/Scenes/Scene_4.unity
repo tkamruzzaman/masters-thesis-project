@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355671611}
   m_Layer: 0
-  m_Name: Mona
+  m_Name: Bonbibi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394533356}
   m_Layer: 0
-  m_Name: Dhona
+  m_Name: DokkhinRai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

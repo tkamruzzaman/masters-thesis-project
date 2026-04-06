@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
-  m_Name: New DialogueLine
+  m_Name: Line_S5_Narration_Conv_02
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
   speaker: 0
-  text: 
+  text: He steps back into the trees.

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
+  m_Name: Choice_5_1_HighC
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
+  prompt: 
+  options:
+  - label: I knew when we crossed the boundary. I felt it the moment the forest changed.
+      I should have said something. I didn't, and I'm sorry for that.
+    lean: 0
+    conscienceValue: 0
+    flagToSet: 
+    responseSequence: {fileID: 11400000, guid: 2af07cacc59274d7dab5dd49cd2b80ba, type: 2}
+    nextSequence: {fileID: 11400000, guid: adb2879255f404f8e80b0f954b24e4a6, type: 2}
+  - label: I'm sorry for what was taken from here. I know that doesn't fix it.
+    lean: 0
+    conscienceValue: 0
+    flagToSet: 
+    responseSequence: {fileID: 11400000, guid: e35d62b2eb48b4f9b821a22b67e08ed0, type: 2}
+    nextSequence: {fileID: 11400000, guid: adb2879255f404f8e80b0f954b24e4a6, type: 2}

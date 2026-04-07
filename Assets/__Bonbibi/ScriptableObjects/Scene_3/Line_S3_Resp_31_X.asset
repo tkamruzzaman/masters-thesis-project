@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Resp_31_X
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "You stay where you are. Dhona is already rowing. The moment passes. \nMona
-    watches you go. You don't meet his eyes."
+  text: You stay where you are. Dhona is already rowing. The moment passes. Mona
+    watches you go. You don't meet his eyes.

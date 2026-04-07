@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_02
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "Then the trees start to change. The light comes through differently \nhere.
-    The sounds are different too. This is still Bonbibi's side. \nBut it doesn't
-    feel like it for much longer."
+  text: Then the trees start to change. The light comes through differently here.
+    The sounds are different too. This is still Bonbibi's side. But it doesn't feel
+    like it for much longer.

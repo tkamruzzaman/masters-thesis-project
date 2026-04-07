@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S2_Mother_01
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 0
   speaker: 4
-  text: "Listen to me. The forest gives, the forest takes, and the men \n  you're
-    going with don't always know the difference."
+  text: Listen to me. The forest gives, the forest takes, and the men you're going
+    with don't always know the difference.

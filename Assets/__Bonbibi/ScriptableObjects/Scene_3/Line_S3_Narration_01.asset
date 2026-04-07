@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_01
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "The river is wide at first, and the light is ordinary. Dhona's men \ntalk,
-    eat and row. Dukhi sits near the back of the boat and watches \nthe bank slide
-    past."
+  text: The river is wide at first, and the light is ordinary. Dhona's men talk,
+    eat and row. Dukhi sits near the back of the boat and watches the bank slide
+    past.

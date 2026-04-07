@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_Deer
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "A chital deer bolts from the undergrowth, crashing through branches, \ngone
-    before anyone turns to look. Anyone except you."
+  text: A chital deer bolts from the undergrowth, crashing through branches, gone
+    before anyone turns to look. Anyone except you!!

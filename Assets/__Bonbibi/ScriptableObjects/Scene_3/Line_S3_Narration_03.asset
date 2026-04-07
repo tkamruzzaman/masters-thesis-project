@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_03
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
   text: The crew works. Hours pass. Two boats are loaded. Then Dhona's men light
-    a fire beneath a tree heavy with honeycomb. The smoke is thick.
+    a fire beneath a tree heavy with honeycomb. The smoke is thick...

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Resp_31_C2
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "Mona watches you go. He doesn't look away until the current takes \nyou
-    around the bend."
+  text: Mona watches you go. He doesn't look away until the current takes you around
+    the bend.

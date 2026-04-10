@@ -16,6 +16,13 @@ namespace Bonbibi
         private bool _waitingForInput = false;
         private bool _waitingForChoice = false;
 
+        private GameController _gameController;
+
+        private void Start()
+        {
+            _gameController = FindAnyObjectByType(typeof(GameController)) as GameController;
+        }
+
         public void PlaySequence(DialogueSequence dialogueSequence)
         {
             if (!dialogueSequence || dialogueSequence.lines.Length == 0)
@@ -68,7 +75,8 @@ namespace Bonbibi
             
             if (completed.loadNextSceneOnComplete)
             {
-                SceneLoader.Instance.LoadNext();
+                //SceneLoader.Instance.LoadNext();
+                _gameController.LoadNextGameScene();
             }
         }
 

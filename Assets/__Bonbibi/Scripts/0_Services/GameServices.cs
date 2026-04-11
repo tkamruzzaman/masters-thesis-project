@@ -1,5 +1,8 @@
+using Bonbibi;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
+[DefaultExecutionOrder(-10)]
 public class GameServices : MonoBehaviour
 {
    public static GameServices Instance { get; private set; }
@@ -30,5 +33,11 @@ public class GameServices : MonoBehaviour
       if (effectsManager == null) effectsManager = FindAnyObjectByType<EffectsManager>();
       if (navigationManager == null) navigationManager = FindAnyObjectByType<NavigationManager>();
       if (uiManager == null) uiManager = FindAnyObjectByType<UIManager>();
+   }
+
+   [Button(ButtonSizes.Large)]
+   public void ResetGame()
+   {
+      GameState.Reset();
    }
 }

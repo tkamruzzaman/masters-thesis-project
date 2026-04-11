@@ -72,11 +72,20 @@ namespace Bonbibi
             // Cache before clearing so the event fires cleanly
             DialogueSequence completed = _currentSequence;
             _currentSequence = null;
-            
-            if (completed.loadNextSceneOnComplete)
+
+            if (completed.loadChapterSelectOnComplete)
             {
-                //SceneLoader.Instance.LoadNext();
-                _gameController.LoadNextGameScene();
+                Scenes currentScene = GameServices.Instance.navigationManager.GetCurrentScene();
+                GameState.UnlockNextChapter((int)currentScene);
+                switch (currentScene)
+                {
+                    case Scenes.Scene6:
+                        _gameController.LoadEndScene();
+                        break;
+                    default:
+                        _gameController.LoadChapterSelection();
+                        break;
+                }
             }
         }
 
@@ -131,6 +140,7 @@ namespace Bonbibi
                 FinishChoice();
             }
         }
+        
         private IEnumerator PlaySequenceThenContinue(DialogueSequence responseSequence, DialogueSequence nextSequence)
         {
             PlaySequence(responseSequence);

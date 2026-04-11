@@ -41,8 +41,8 @@ namespace Bonbibi
         }
 
         private void DialogueManagerOnOnChoiceOrSequenceStarted(object sender, EventArgs e) => LockPlayerControls();
-        
-        private void DialogueManagerOnOnChoiceOrSequenceEnded(object sender, EventArgs e)=> UnlockPlayerControls();
+
+        private void DialogueManagerOnOnChoiceOrSequenceEnded(object sender, EventArgs e) => UnlockPlayerControls();
 
 
         private void LockPlayerControls()

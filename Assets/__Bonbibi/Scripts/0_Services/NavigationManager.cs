@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,16 +45,27 @@ public class NavigationManager : MonoBehaviour
             SceneManager.LoadScene((int)scene);
         });
     }
+    
+    public int GetCurrentGameSceneIndex()
+    {
+        Scenes currentScene = GetCurrentScene();
+        return currentScene != Scenes.Menu 
+               || currentScene != Scenes.Selection 
+               || currentScene != Scenes.End
+            ? (int)currentScene
+            : -1;
+    }
 }
 
 public enum Scenes
 {
     Menu = 0,
-    Scene1 = 1,
-    Scene2 = 2,
-    Scene3 = 3,
-    Scene4 = 4,
-    Scene5 = 5,
-    Scene6 = 6,
-    End = 7,
+    Selection = 1,
+    Scene1 = 2,
+    Scene2 = 3,
+    Scene3 = 4,
+    Scene4 = 5,
+    Scene5 = 6,
+    Scene6 = 7,
+    End = 8,
 }

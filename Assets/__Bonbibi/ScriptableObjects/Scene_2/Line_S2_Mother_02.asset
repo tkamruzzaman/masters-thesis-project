@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S2_Mother_02
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 0
   speaker: 4
-  text: "And if anything goes wrong out there. You call Bonbibi's name. \n  Do you
-    hear me?"
+  text: And if anything goes wrong out there. You call Bonbibi's name. Do you hear
+    me??

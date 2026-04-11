@@ -37,8 +37,7 @@ using UnityEngine.UI;
 
         void PlayButtonAction()
         {
-            //TODO: go to game scene
-            GameServices.Instance.navigationManager.LoadScene(Scenes.Scene1);
+            GameServices.Instance.navigationManager.LoadScene(Scenes.Selection);
             GameServices.Instance.audioManager.PlayButtonClick();
         }
 

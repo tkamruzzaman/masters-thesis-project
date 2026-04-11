@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_Close_01
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "Somewhere above you, in a part of the forest you cannot see, \nsomething
-    is watching all of this. Has been watching since you \ncrossed the boundary.
-    It is patient. It has been patient for \na very long time."
+  text: Somewhere above you, in a part of the forest you cannot see, something is
+    watching all of this. Has been watching since you crossed the boundary. It is
+    patient. It has been patient for a very long time.

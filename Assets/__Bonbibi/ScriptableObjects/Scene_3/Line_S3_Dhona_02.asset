@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Dhona_02
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 0
   speaker: 1
-  text: "What did I tell you? Look at this place. Nobody has touched this. \nWe could
-    fill ten boats."
+  text: What did I tell you? Look at this place. Nobody has touched this. We could
+    fill ten boats!

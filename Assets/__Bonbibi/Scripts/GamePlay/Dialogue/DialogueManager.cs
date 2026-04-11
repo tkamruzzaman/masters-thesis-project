@@ -16,6 +16,13 @@ namespace Bonbibi
         private bool _waitingForInput = false;
         private bool _waitingForChoice = false;
 
+        private GameController _gameController;
+
+        private void Start()
+        {
+            _gameController = FindAnyObjectByType(typeof(GameController)) as GameController;
+        }
+
         public void PlaySequence(DialogueSequence dialogueSequence)
         {
             if (!dialogueSequence || dialogueSequence.lines.Length == 0)
@@ -65,10 +72,20 @@ namespace Bonbibi
             // Cache before clearing so the event fires cleanly
             DialogueSequence completed = _currentSequence;
             _currentSequence = null;
-            
-            if (completed.loadNextSceneOnComplete)
+
+            if (completed.loadChapterSelectOnComplete)
             {
-                SceneLoader.Instance.LoadNext();
+                Scenes currentScene = GameServices.Instance.navigationManager.GetCurrentScene();
+                GameState.UnlockNextChapter((int)currentScene);
+                switch (currentScene)
+                {
+                    case Scenes.Scene6:
+                        _gameController.LoadEndScene();
+                        break;
+                    default:
+                        _gameController.LoadChapterSelection();
+                        break;
+                }
             }
         }
 
@@ -123,6 +140,7 @@ namespace Bonbibi
                 FinishChoice();
             }
         }
+        
         private IEnumerator PlaySequenceThenContinue(DialogueSequence responseSequence, DialogueSequence nextSequence)
         {
             PlaySequence(responseSequence);

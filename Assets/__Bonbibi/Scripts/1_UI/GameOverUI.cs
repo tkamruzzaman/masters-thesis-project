@@ -34,7 +34,7 @@ using UnityEngine.UI;
         {
             GameServices.Instance.audioManager.PlayButtonClick();
             Time.timeScale = 1;
-            GameServices.Instance.navigationManager.LoadScene(Scenes.Scene1);
+            GameServices.Instance.navigationManager.LoadScene(Scenes.Menu);
         }
 
         void MainMenuButtonAction()

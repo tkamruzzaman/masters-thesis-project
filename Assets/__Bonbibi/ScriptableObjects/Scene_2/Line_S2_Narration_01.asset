@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S2_Narration_01
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "The shrine is small. Your mother has been coming here since before \n  you
-    were born. She knows exactly how to arrange the offerings, exactly \n  which
-    words to say. You've watched her do it so many times that you could \n  do it
-    yourself. You never have."
+  text: The shrine is small. Your mother has been coming here since before you were
+    born. She knows exactly how to arrange the offerings, exactly which words to
+    say. You've watched her do it so many times that you could do it yourself. You
+    never have.

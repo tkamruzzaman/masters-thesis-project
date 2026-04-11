@@ -1,11 +1,13 @@
+using Bonbibi;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
+[DefaultExecutionOrder(-10)]
 public class GameServices : MonoBehaviour
 {
    public static GameServices Instance { get; private set; }
 
    public AudioManager audioManager;
-   //public DialogueManager dialogueManager;
    public EffectsManager effectsManager;
    public NavigationManager navigationManager;
    public UIManager uiManager;
@@ -27,10 +29,15 @@ public class GameServices : MonoBehaviour
 
    private void AssignReferences()
    {
-      audioManager = FindFirstObjectByType<AudioManager>();
-      //dialogueManager = FindFirstObjectByType<DialogueManager>();
-      effectsManager = FindFirstObjectByType<EffectsManager>();
-      navigationManager = FindFirstObjectByType<NavigationManager>();
-      uiManager = FindFirstObjectByType<UIManager>();
+      if (audioManager == null) audioManager = FindAnyObjectByType<AudioManager>();
+      if (effectsManager == null) effectsManager = FindAnyObjectByType<EffectsManager>();
+      if (navigationManager == null) navigationManager = FindAnyObjectByType<NavigationManager>();
+      if (uiManager == null) uiManager = FindAnyObjectByType<UIManager>();
+   }
+
+   [Button(ButtonSizes.Large)]
+   public void ResetGame()
+   {
+      GameState.Reset();
    }
 }

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Narration_DeeperIn
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 1
   speaker: 0
-  text: "The forest on this side is different \u2014 bigger. Not unfriendly, \nexactly.
+  text: "The forest on this side is different, bigger!! Not unfriendly, exactly.
     But not used to people. The roots of the mangroves break \nthe surface of the
-    water like ribs. Something watches from the dark \nbetween the trees. The resources
-    here are extraordinary. Dhona \nis grinning."
+    water like ribs. Something watches from the dark between the trees. The resources
+    here are extraordinary. Dhona is grinning!!"

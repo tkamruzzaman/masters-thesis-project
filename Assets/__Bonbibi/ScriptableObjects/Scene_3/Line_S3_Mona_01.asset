@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8663018083e44059281731f5b6e58c0, type: 3}
   m_Name: Line_S3_Mona_01
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueLine
-  isNarration: 0
   speaker: 2
-  text: "This is as far as we go, Dhona. My crew collects from here. \nGood luck
-    to you."
+  text: This is as far as we go, Dhona. My crew collects from here. Good luck to
+    you!

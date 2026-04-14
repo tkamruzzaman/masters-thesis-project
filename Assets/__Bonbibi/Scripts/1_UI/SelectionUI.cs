@@ -1,33 +1,45 @@
 using Bonbibi;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SelectionUI : MonoBehaviour
 {
-    [SerializeField]string[] sceneNames;
+    [SerializeField] string[] sceneNames;
+
     [Header("UI Elements")]
-    [FormerlySerializedAs("sceneButtons")]
     [SerializeField] Button[] chapterButtons;
-    [FormerlySerializedAs("sceneBgImages")] [SerializeField] Image[] chapterBgImages;
-    [FormerlySerializedAs("sceneNameTexts")] [SerializeField] TMP_Text[] chapterNameTexts;
-    
+    [SerializeField] Image[] chapterBgImages;
+    [SerializeField] TMP_Text[] chapterNameTexts;
+
+   
+    [Header("Zoom Settings")]
+    [SerializeField] RectTransform selectionPanel;
+    [SerializeField] float zoomScale = 4f;
+    [SerializeField] float zoomDuration = 0.6f;
+    [SerializeField] Ease zoomEase = Ease.InCubic;
+
+    private bool _isTransitioning;
+
     private void Awake()
     {
         for (int i = 0; i < chapterNameTexts.Length; i++)
         {
             chapterNameTexts[i].text = sceneNames[i];
         }
-        
-        for (var i = 0; i < chapterButtons.Length; i++)
+
+        for (int i = 0; i < chapterButtons.Length; i++)
         {
             var button = chapterButtons[i];
             var sceneNumber = i + GameState.GAME_SCENE_INDEX_DELTA;
-            button.onClick.AddListener((() =>
+
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() =>
             {
-                GameServices.Instance.navigationManager.LoadScene((Scenes)sceneNumber);
-            }));
+                if (_isTransitioning) return;
+                ZoomToButton(button, sceneNumber);
+            });
         }
     }
 
@@ -35,7 +47,7 @@ public class SelectionUI : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
+
         RefreshButtons();
     }
 
@@ -51,5 +63,36 @@ public class SelectionUI : MonoBehaviour
             canvasGroup.interactable = isUnlocked;
             canvasGroup.alpha = isUnlocked ? 1f : 0.4f;
         }
+    }
+
+    private void ZoomToButton(Button button, int sceneNumber)
+    {
+        _isTransitioning = true;
+
+        foreach (var b in chapterButtons)
+        {
+            var cg = b.GetComponent<CanvasGroup>();
+            if (cg != null) cg.interactable = false;
+        }
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            (RectTransform)transform,
+            button.transform.position,
+            null,
+            out Vector2 buttonLocalPos
+        );
+
+        Vector3 targetPosition = -(Vector3)(buttonLocalPos * zoomScale);
+
+        selectionPanel.localScale = Vector3.one;
+        selectionPanel.localPosition = Vector3.zero;
+
+        Sequence zoomSequence = DOTween.Sequence();
+        zoomSequence.Append(selectionPanel.DOScale(zoomScale, zoomDuration).SetEase(zoomEase));
+        zoomSequence.Join(selectionPanel.DOLocalMove(targetPosition, zoomDuration).SetEase(zoomEase));
+        zoomSequence.OnComplete(() =>
+        {
+            GameServices.Instance.navigationManager.LoadScene((Scenes)sceneNumber);
+        });
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_2_1
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: 
+  prompt: Will you call Bonbibi's name if you are afraid?
   options:
   - label: I promise!
     lean: 0

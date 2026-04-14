@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_3_2
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: 
+  prompt: What do you do?
   options:
   - label: Pick up the crate. Let it slip.
     lean: 0

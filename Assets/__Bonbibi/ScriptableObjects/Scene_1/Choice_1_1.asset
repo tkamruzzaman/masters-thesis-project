@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_1_1
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: What do you think, listening to this?
+  prompt: Whose argument makes sense to you?
   options:
   - label: Mona's right. Something about the way Dhona talks about the forest makes
-      my stomach turn.
+      my stomach turn!
     lean: 0
     conscienceValue: 1
     flagToSet: 
     responseSequence: {fileID: 0}
     nextSequence: {fileID: 11400000, guid: 5f9dfaa56040e48c9a81f3f2ebea3873, type: 2}
   - label: Dhona's been doing this longer than anyone. He probably knows what he's
-      doing.
+      doing!
     lean: 2
     conscienceValue: 0
     flagToSet: 

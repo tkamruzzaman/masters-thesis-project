@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_5_1_HighC
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: 
+  prompt: What is your reply?
   options:
   - label: I knew when we crossed the boundary. I felt it the moment the forest changed.
       I should have said something. I didn't, and I'm sorry for that.

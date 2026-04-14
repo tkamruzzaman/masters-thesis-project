@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_5_1_LowC
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: 
+  prompt: What is your reply?
   options:
   - label: I was just working. I needed the money. My father is gone and my mother
       has nothing.

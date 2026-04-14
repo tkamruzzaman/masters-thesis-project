@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4625708fe3404891e09cfde40c8344, type: 3}
   m_Name: Choice_3_1
   m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueChoice
-  prompt: 
+  prompt: Where are you going boy?
   options:
   - label: Step toward Mona's boat.
     lean: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
     flagToSet: 
     responseSequence: {fileID: 11400000, guid: ef2c67f8533ed4cb0be91d42cdcdac39, type: 2}
     nextSequence: {fileID: 11400000, guid: 01b2e2506d33548078e86aea172d5f32, type: 2}
-  - label: Stay where you are.
+  - label: Stay where you are...
     lean: 2
     conscienceValue: 0
     flagToSet: 

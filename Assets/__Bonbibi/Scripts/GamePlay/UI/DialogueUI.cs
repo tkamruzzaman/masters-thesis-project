@@ -2,32 +2,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections;
 
 namespace Bonbibi
 {
     public class DialogueUI : MonoBehaviour
     {
         [Header("Fade Panel")]
-        [SerializeField]  private CanvasGroup fadePanel;
-        [Header("Narration Panel")] [SerializeField]
-        private GameObject narrationPanel;
+        [SerializeField] private CanvasGroup fadePanel;
 
+        [Header("Narration Panel")]
+        [SerializeField] private GameObject narrationPanel;
         [SerializeField] private TextMeshProUGUI narrationText;
 
-        [Header("Dialogue Panel")] [SerializeField]
-        private GameObject dialoguePanel;
-
+        [Header("Dialogue Panel")]
+        [SerializeField] private GameObject dialoguePanel;
         [SerializeField] private TextMeshProUGUI speakerName;
         [SerializeField] private TextMeshProUGUI dialogueText;
 
-        [Header("Choice Panel")] [SerializeField]
-        private GameObject choicePanel;
-
+        [Header("Choice Panel")]
+        [SerializeField] private GameObject choicePanel;
         [SerializeField] private TextMeshProUGUI promptText;
         [SerializeField] private Button[] choiceButtons;
         [SerializeField] private TextMeshProUGUI[] choiceButtonTexts;
 
+        [Header("Typewriter Settings")]
+        [SerializeField] private float charDelay = 0.03f;
+
         public static DialogueUI Instance { get; private set; }
+        public bool IsTyping { get; private set; } = false;
+
+        private Coroutine _typewriterCoroutine;
+        private string _currentFullText = string.Empty;
+        private TextMeshProUGUI _currentTarget;
 
         private void Awake()
         {
@@ -43,8 +50,9 @@ namespace Bonbibi
         {
             HideAll();
             speakerName.text = speaker;
-            dialogueText.text = text;
+            dialogueText.text = string.Empty;
             dialoguePanel.SetActive(true);
+            StartTypewriter(dialogueText, text);
         }
 
         // ─────────────────────────────────────────
@@ -54,8 +62,53 @@ namespace Bonbibi
         public void ShowNarration(string text)
         {
             HideAll();
-            narrationText.text = text;
+            narrationText.text = string.Empty;
             narrationPanel.SetActive(true);
+            StartTypewriter(narrationText, text);
+        }
+
+        // ─────────────────────────────────────────
+        // Typewriter
+        // ─────────────────────────────────────────
+
+        private void StartTypewriter(TextMeshProUGUI target, string fullText)
+        {
+            _currentFullText = fullText;
+            _currentTarget = target;
+
+            if (_typewriterCoroutine != null)
+                StopCoroutine(_typewriterCoroutine);
+
+            _typewriterCoroutine = StartCoroutine(TypewriterRoutine(target, fullText));
+        }
+
+        private IEnumerator TypewriterRoutine(TextMeshProUGUI target, string fullText)
+        {
+            IsTyping = true;
+            target.text = string.Empty;
+
+            foreach (char c in fullText)
+            {
+                target.text += c;
+                yield return new WaitForSeconds(charDelay);
+            }
+
+            IsTyping = false;
+            _typewriterCoroutine = null;
+        }
+
+        public void CompleteTypewriter()
+        {
+            if (_typewriterCoroutine != null)
+            {
+                StopCoroutine(_typewriterCoroutine);
+                _typewriterCoroutine = null;
+            }
+
+            if (_currentTarget != null)
+                _currentTarget.text = _currentFullText;
+
+            IsTyping = false;
         }
 
         // ─────────────────────────────────────────
@@ -71,14 +124,11 @@ namespace Bonbibi
             {
                 if (i < options.Length)
                 {
-                    int index = i; // capture for lambda
+                    int index = i;
                     choiceButtons[i].gameObject.SetActive(true);
                     choiceButtonTexts[i].text = options[i].label;
                     choiceButtons[i].onClick.RemoveAllListeners();
-                    choiceButtons[i].onClick.AddListener(() =>
-                    {
-                        onChosen(index);
-                    });
+                    choiceButtons[i].onClick.AddListener(() => onChosen(index));
                 }
                 else
                 {
@@ -89,8 +139,22 @@ namespace Bonbibi
             choicePanel.SetActive(true);
         }
 
+        // ─────────────────────────────────────────
+        // Hide
+        // ─────────────────────────────────────────
+
         public void HideAll()
         {
+            if (_typewriterCoroutine != null)
+            {
+                StopCoroutine(_typewriterCoroutine);
+                _typewriterCoroutine = null;
+            }
+
+            IsTyping = false;
+            _currentFullText = string.Empty;
+            _currentTarget = null;
+
             narrationPanel.SetActive(false);
             dialoguePanel.SetActive(false);
             choicePanel.SetActive(false);

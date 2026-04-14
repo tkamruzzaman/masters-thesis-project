@@ -179,11 +179,19 @@ namespace Bonbibi
 
         private void Update()
         {
-            if (!_waitingForInput || _waitingForChoice) { return; }
+            if (!_waitingForInput || _waitingForChoice) return;
 
             if (!Keyboard.current.spaceKey.wasPressedThisFrame &&
-                !Mouse.current.leftButton.wasPressedThisFrame) { return; }
+                !Mouse.current.leftButton.wasPressedThisFrame) return;
 
+            // First input: skip typewriter if still running
+            if (DialogueUI.Instance.IsTyping)
+            {
+                DialogueUI.Instance.CompleteTypewriter();
+                return;
+            }
+
+            // Second input (or first if typewriter already done): advance
             _waitingForInput = false;
             _currentLineIndex++;
             ShowCurrentLine();

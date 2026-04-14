@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211690948}
   m_Layer: 0
-  m_Name: ---DoNotDestroy---_1
+  m_Name: ---DoNotDestroy---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2057,5 +2057,5 @@ SceneRoots:
   - {fileID: 1485376071}
   - {fileID: 1699596323}
   - {fileID: 3107065702421537273}
-  - {fileID: 211690948}
   - {fileID: 830146008}
+  - {fileID: 211690948}

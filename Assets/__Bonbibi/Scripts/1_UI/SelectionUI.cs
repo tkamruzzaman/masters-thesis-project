@@ -12,7 +12,7 @@ public class SelectionUI : MonoBehaviour
     [SerializeField] Button[] chapterButtons;
     [SerializeField] Image[] chapterBgImages;
     [SerializeField] TMP_Text[] chapterNameTexts;
-
+    [SerializeField] private Button menuButton;
    
     [Header("Zoom Settings")]
     [SerializeField] RectTransform selectionPanel;
@@ -41,6 +41,11 @@ public class SelectionUI : MonoBehaviour
                 ZoomToButton(button, sceneNumber);
             });
         }
+        
+        menuButton.onClick.AddListener(() =>
+        {
+            GameServices.Instance.navigationManager.LoadScene(Scenes.Menu);
+        });
     }
 
     private void Start()

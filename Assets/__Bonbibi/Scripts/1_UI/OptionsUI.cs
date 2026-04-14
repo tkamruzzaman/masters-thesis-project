@@ -11,6 +11,8 @@ using UnityEngine.UI;
         [SerializeField] Button backButton;
         [Header("Controls Button")]
         [SerializeField] Button controlsButton;
+        [Header("Reset Button")]
+        [SerializeField] Button resetButton;
 
         [Header("Controls Panel")]
         [SerializeField] GameObject controlsPanel;
@@ -28,6 +30,8 @@ using UnityEngine.UI;
             soundToggle.onValueChanged.AddListener(SoundToggleAction);
 
             controlsButton.onClick.AddListener(ControlButtonAction);
+            
+            resetButton.onClick.AddListener(ResetButtonAction);
 
             CheckValues();
 
@@ -67,6 +71,11 @@ using UnityEngine.UI;
         {
             controlsPanel.SetActive(true);
             GameServices.Instance.audioManager.PlayButtonClick();
+        }
+
+        private void ResetButtonAction()
+        {
+            GameServices.Instance.ResetGame();
         }
     }
 

@@ -2,27 +2,36 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Audio Sources")] 
-    [SerializeField] private AudioSource sfxSource;
+    [Header("Audio Sources")] [SerializeField]
+    private AudioSource sfxSource;
 
     [SerializeField] private AudioSource musicSource;
 
-    [Header("Audio Clips")] 
-    [SerializeField] private AudioClip bgMusicClip;
-    [SerializeField] private AudioClip buttonSFXClip;
+    [Header("Audio Clips")] [SerializeField]
+    private AudioClip bgMusicClip;
+
+    [SerializeField] private AudioClip buttonSfxClip;
+
+    //Source: https://freesound.org/people/BMacZero/sounds/160678/
+    [SerializeField] private AudioClip typingSfxClip;
 
     public bool IsMusicOn = true;
     public bool IsSFXOn = true;
 
-
-    public void PlaySFX(AudioClip clip)
+    public void PlaySfx(AudioClip clip, float volume = 1)
     {
-        sfxSource.PlayOneShot(clip);
+        if (!clip) return;
+        sfxSource.PlayOneShot(clip, volume);
     }
 
     public void PlayButtonClick()
     {
-        PlaySFX(buttonSFXClip);
+        PlaySfx(buttonSfxClip, volume: 0.5f);
+    }
+
+    public void PlayTypingSound(float volume)
+    {
+        PlaySfx(typingSfxClip, volume);
     }
 
     public void PlayMusic(AudioClip clip)
@@ -30,7 +39,7 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = clip;
         musicSource.Play();
     }
-    
+
     public void StopMusic()
     {
         musicSource.Stop();

@@ -1779,6 +1779,9 @@ MonoBehaviour:
   - {fileID: 5156943884274021466}
   - {fileID: 1450871008091174267}
   charDelay: 0.03
+  typeVolume: 0.25
+  playEveryNChars: 2
+  skipSilentChars: 1
 --- !u!1 &7327196447009885729
 GameObject:
   m_ObjectHideFlags: 0

@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneNavigation
   currentSceneIndex: 0
   loadingImage: {fileID: 6608926397637699273}
-  fadeInDuration: 1
+  fadeInDuration: 0.75
   fadeOutDuration: 1
   fadeInEase: 18
   fadeOutEase: 17
@@ -402,7 +402,8 @@ MonoBehaviour:
   sfxSource: {fileID: 5281189407327231457}
   musicSource: {fileID: 5830425618793530192}
   bgMusicClip: {fileID: 8300000, guid: 264a471cc71424422800e0b3eb6f97b0, type: 3}
-  buttonSFXClip: {fileID: 8300000, guid: 4fb747c399c034750a68c086d90a106e, type: 3}
+  buttonSfxClip: {fileID: 8300000, guid: 4fb747c399c034750a68c086d90a106e, type: 3}
+  typingSfxClip: {fileID: 8300000, guid: 01c67fdf98a6b4e50b24e52d8775ed36, type: 3}
   IsMusicOn: 1
   IsSFXOn: 1
 --- !u!1 &6424861977857285853

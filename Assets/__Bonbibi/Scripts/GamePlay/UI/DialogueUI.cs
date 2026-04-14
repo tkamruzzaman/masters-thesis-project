@@ -28,6 +28,12 @@ namespace Bonbibi
 
         [Header("Typewriter Settings")]
         [SerializeField] private float charDelay = 0.03f;
+        [Range(0f, 1f)]
+        [SerializeField] private float typeVolume = 0.4f;
+        [Tooltip("Play sound every N characters. 1 = every character, 2 = every other, etc.")]
+        [SerializeField] private int playEveryNChars = 1;
+        [Tooltip("Skip sound for spaces and punctuation.")]
+        [SerializeField] private bool skipSilentChars = true;
 
         public static DialogueUI Instance { get; private set; }
         public bool IsTyping { get; private set; } = false;
@@ -35,6 +41,7 @@ namespace Bonbibi
         private Coroutine _typewriterCoroutine;
         private string _currentFullText = string.Empty;
         private TextMeshProUGUI _currentTarget;
+        private int _charCount = 0;
 
         private void Awake()
         {
@@ -75,6 +82,7 @@ namespace Bonbibi
         {
             _currentFullText = fullText;
             _currentTarget = target;
+            _charCount = 0;
 
             if (_typewriterCoroutine != null)
                 StopCoroutine(_typewriterCoroutine);
@@ -90,11 +98,26 @@ namespace Bonbibi
             foreach (char c in fullText)
             {
                 target.text += c;
+                _charCount++;
+
+                PlayTypeSound(c);
+
                 yield return new WaitForSeconds(charDelay);
             }
 
             IsTyping = false;
             _typewriterCoroutine = null;
+        }
+
+        private void PlayTypeSound(char c)
+        {
+            // Optionally skip spaces, punctuation, newlines
+            if (skipSilentChars && (c == ' ' || c == '\n' || char.IsPunctuation(c))) return;
+
+            // Play every N characters
+            if (_charCount % playEveryNChars != 0) return;
+
+            GameServices.Instance.audioManager.PlayTypingSound(typeVolume);
         }
 
         public void CompleteTypewriter()

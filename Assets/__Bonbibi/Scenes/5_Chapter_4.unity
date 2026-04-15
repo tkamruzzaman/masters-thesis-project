@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger_Choice_4_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2469666236444817733, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: choice
       value: 
@@ -791,13 +795,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709255169}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &709255172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 709255168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709255169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292db0d14e374ba68e16276afcb72c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueTrigger
 --- !u!1001 &714613667
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1804486591}
     m_Modifications:
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalScale.x
@@ -821,7 +836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -855,14 +870,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger_Monologue_C
       objectReference: {fileID: 0}
+    - target: {fileID: 2469666236444817733, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: sequence
       value: 
       objectReference: {fileID: 11400000, guid: 8ebad26d9ee7541a4bc3dabb14e76948, type: 2}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTrigger
+      value: 
+      objectReference: {fileID: 709255172}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: requiresFlag
       value: promisedMother
       objectReference: {fileID: 0}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: triggerGroupToDisable
+      value: 
+      objectReference: {fileID: 1804486590}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -936,6 +963,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714613668}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &714613671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 714613667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &714613672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 714613667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714613668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292db0d14e374ba68e16276afcb72c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueTrigger
 --- !u!1 &827481448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1842,14 @@ PrefabInstance:
       propertyPath: sequence
       value: 
       objectReference: {fileID: 11400000, guid: 1111f9ec9832341aabac941eb365d52a, type: 2}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTrigger
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTriggerGroup
+      value: 
+      objectReference: {fileID: 1804486590}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1881,10 +1932,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
@@ -1961,13 +2008,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+--- !u!1 &1804486589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804486591}
+  - component: {fileID: 1804486590}
+  m_Layer: 0
+  m_Name: TriggerGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1804486590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804486589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64e8a289a9e4ebcba82f0aeb7c494a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.TriggerGroupEnabler
+  triggersToEnable:
+  - {fileID: 714613672}
+  - {fileID: 1967339263}
+--- !u!4 &1804486591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804486589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 8.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 714613671}
+  - {fileID: 1967339262}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1967339258
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1804486591}
     m_Modifications:
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalScale.x
@@ -1991,7 +2087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2025,14 +2121,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger_Monologue_X
       objectReference: {fileID: 0}
+    - target: {fileID: 2469666236444817733, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: sequence
       value: 
       objectReference: {fileID: 11400000, guid: 62cca0f110e144a16bd2b47b2b74da74, type: 2}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTrigger
+      value: 
+      objectReference: {fileID: 709255172}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: requiresFlagFalse
       value: promisedMother
       objectReference: {fileID: 0}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: triggerGroupToDisable
+      value: 
+      objectReference: {fileID: 1804486590}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2106,6 +2214,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967339259}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1967339262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1070596764793146977, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 1967339258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1967339263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 1967339258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967339259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292db0d14e374ba68e16276afcb72c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueTrigger
 --- !u!1 &1992130761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,8 +2339,7 @@ SceneRoots:
   - {fileID: 544652074}
   - {fileID: 609684060}
   - {fileID: 1683740835}
-  - {fileID: 714613667}
-  - {fileID: 1967339258}
+  - {fileID: 1804486591}
   - {fileID: 709255168}
   - {fileID: 273841308}
   - {fileID: 1292919728}

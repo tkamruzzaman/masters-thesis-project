@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: sequence
       value: 
       objectReference: {fileID: 11400000, guid: ae658c3091da54889a40cda6010acc65, type: 2}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTrigger
+      value: 
+      objectReference: {fileID: 1813545090}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1009,10 +1013,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
@@ -1641,6 +1641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger_Choice_3_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2469666236444817733, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: choice
       value: 
@@ -1649,6 +1653,10 @@ PrefabInstance:
       propertyPath: sequence
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: nextTrigger
+      value: 
+      objectReference: {fileID: 2073581153}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1722,6 +1730,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813545087}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1813545090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 1813545086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813545087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292db0d14e374ba68e16276afcb72c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueTrigger
 --- !u!1 &1985458568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger_Choice_3_2
       objectReference: {fileID: 0}
+    - target: {fileID: 2469666236444817733, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
       propertyPath: choice
       value: 
@@ -1975,6 +1998,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073581150}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2073581153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7729791491666639335, guid: 960258ce44888455c82e6bddf39f88e9, type: 3}
+  m_PrefabInstance: {fileID: 2073581149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073581150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292db0d14e374ba68e16276afcb72c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bonbibi.DialogueTrigger
 --- !u!1 &2129079913
 GameObject:
   m_ObjectHideFlags: 0
